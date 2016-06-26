@@ -10,17 +10,28 @@ public class FindKthToTailTest {
         int length = 24;
         int k = 12;
         FindKthToTail.ListNode<Integer> head = createList(length);
-        FindKthToTail.ListNode<Integer> ret = FindKthToTail.findKthToTailFacade(head, 12);
+        FindKthToTail.ListNode<Integer> ret = FindKthToTail.findKthToTailFacade(head, k);
         Assert.assertNotNull("应查询结果为" + k + ", 实际为空", ret);
-        Assert.assertEquals(new Integer(12), ret.getValue());
+        Assert.assertEquals(new Integer(k), ret.getValue());
     }
 
+    @Test
     public void listSizeEqualsK() {
-
+        int length = 24;
+        int k = 24;
+        FindKthToTail.ListNode<Integer> head = createList(length);
+        FindKthToTail.ListNode<Integer> ret = FindKthToTail.findKthToTailFacade(head, k);
+        Assert.assertNotNull("应查询结果为" + k + ", 实际为空", ret);
+        Assert.assertEquals(new Integer(k), ret.getValue());
     }
 
+    @Test
     public void listSizeLargerThanK() {
-
+        int length = 24;
+        int k = 25;
+        FindKthToTail.ListNode<Integer> head = createList(length);
+        FindKthToTail.ListNode<Integer> ret = FindKthToTail.findKthToTailFacade(head, k);
+        Assert.assertNull(ret);
     }
 
     /**

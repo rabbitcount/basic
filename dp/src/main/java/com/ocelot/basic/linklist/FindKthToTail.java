@@ -22,6 +22,13 @@ public class FindKthToTail {
         return findKthToTail(head, k);
     }
 
+    /**
+     * 内部方法
+     * @param cur
+     * @param k
+     * @param <T>
+     * @return
+     */
     private static <T> ListNode<T> findKthToTail(ListNode<T> cur, long k) {
         ListNode<T> firstNode = cur; // 首指针
         ListNode<T> secondNode = cur; // 跟随指针
@@ -32,12 +39,9 @@ public class FindKthToTail {
             }
             firstNode = firstNode.getNext();
         }
-        while(true) {
+        while(firstNode != null) {
             firstNode = firstNode.getNext();
             secondNode = secondNode.getNext();
-            if(Objects.isNull(firstNode)) {
-                break;
-            }
         }
         return secondNode;
     }
