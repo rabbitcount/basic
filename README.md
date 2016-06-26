@@ -1,9 +1,8 @@
 # 工程用途：
 
-1. dp相关
-2. 测试题
-
-NOTE: algs4相关工程位于 https://github.com/rabbitcount/algs4
+1. dp     -- 相关
+2. offer  -- 测试题
+3. algs4  -- algs4相关
 
 # idea中import工程
 
