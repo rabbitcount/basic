@@ -34,19 +34,28 @@ public class ReverseLinkedList {
         LinkedListNode<T> dummy = new LinkedListNode<T>();
         dummy.setNext(list);
 
-        LinkedListNode<T> cur = dummy;
+        LinkedListNode<T> pre = dummy;
 
         for (int index = 1; index < m; index++) {
-            cur = cur.getNext();
+            pre = pre.getNext();
         }
 
-        LinkedListNode<T> pm = cur.getNext();
+        LinkedListNode<T> cur = pre.getNext();
 
+        // step1
+        //   1(pre) -> 3 -> 2(cur) -> 4 -> 5
+        // step2
+        //   1(pre) -> 3 -> 2(cur) -> 4(next) -> 5
+        // step3
+        //   1(pre) -> 3 -> 2(cur) -> 4 -> 5
+        //                         -> 5
+        //
+        // pre和next指向的节点没有变动过
         for (int index = m; index < n; index++) {
-            LinkedListNode<T> temp = pm.getNext();
-            pm.setNext(temp.getNext());
-            temp.setNext(cur.getNext());
-            cur.setNext(temp);
+            LinkedListNode<T> next = cur.getNext();
+            cur.setNext(next.getNext());
+            next.setNext(pre.getNext());
+            pre.setNext(next);
         }
         return dummy.getNext();
     }
