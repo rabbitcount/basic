@@ -9,6 +9,11 @@ import java.util.Objects;
  * Given a linked list, swap every two adjacent nodes and return its head.
  * For example, Given 1->2->3->4, you should return the list as 2->1->4->3.
  * Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed.
+ *
+ * Tip
+ *   如果预期翻转A、B两个节点，需要知道A的前置节点，并
+ *   1. 将B后的节点连接到A节点的后边
+ *   2. 将B节点插入A节点与A的前置节点之间
  */
 public class SwapNodesInPairs {
 
