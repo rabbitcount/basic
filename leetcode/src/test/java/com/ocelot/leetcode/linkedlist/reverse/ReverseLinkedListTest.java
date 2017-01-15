@@ -13,13 +13,26 @@ public class ReverseLinkedListTest {
     public void reverseLinkedListBetweenMNTest() {
         LinkedListNode<Integer> dummy = new LinkedListNode<>();
         LinkedListNode<Integer> cur = dummy;
-        for (int index = 1; index < 6; index++) {
+        createSimpleLinkedList(cur, 6);
+        LinkedListNode<Integer> ret = ReverseLinkedList.reverseLinkedListBetweenMN(dummy.getNext(), 2, 4);
+        System.out.println("1");
+    }
+
+    @Test
+    public void reverseKGroupTest() {
+        LinkedListNode<Integer> dummy = new LinkedListNode<>();
+        LinkedListNode<Integer> cur = dummy;
+        createSimpleLinkedList(cur, 5);
+        LinkedListNode<Integer> ret = ReverseLinkedList.reverseKGroup(dummy.getNext(), 2);
+        System.out.println("1");
+    }
+
+    private static void createSimpleLinkedList(LinkedListNode<Integer> cur, int length) {
+        for (int index = 1; index <= length; index++) {
             LinkedListNode<Integer> node = new LinkedListNode<>();
             node.setValue(index);
             cur.setNext(node);
             cur = cur.getNext();
         }
-        LinkedListNode<Integer> ret = ReverseLinkedList.reverseLinkedListBetweenMN(dummy.getNext(), 2, 4);
-        System.out.println("1");
     }
 }
